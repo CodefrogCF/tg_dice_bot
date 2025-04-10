@@ -81,7 +81,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 def main() -> None:
     # Run the bot.
-    application = Application.builder().token("7797876392:AAHiQilMfUx28YTJPBrGgANmTVVtsgNhXzc").build()
+    application = Application.builder().token("<YOUR TOKEN>").build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("d3".lower(), random_3))

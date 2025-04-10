@@ -84,14 +84,21 @@ def main() -> None:
     application = Application.builder().token("7797876392:AAHiQilMfUx28YTJPBrGgANmTVVtsgNhXzc").build()
 
     application.add_handler(CommandHandler("start", start))
-    
+    application.add_handler(CommandHandler("d3".lower(), random_3))
+    application.add_handler(CommandHandler("d6".lower(), random_6))
+    application.add_handler(CommandHandler("d20".lower(), random_20))
+    application.add_handler(CommandHandler("d3x20".lower(), random_3x20))
+    application.add_handler(CommandHandler("bodypart".lower(), random_bodypart))
+
     # message-handler, to react to text-messages as "D6" or "D20"
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
-    application.add_handler(CommandHandler('stop', cancel)),
+    application.add_handler(CommandHandler("stop", cancel)),
 
     application.run_polling()
 
 
 if __name__ == '__main__':
     main()
+
+
